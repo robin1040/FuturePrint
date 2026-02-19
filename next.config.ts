@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',  // Required for GitHub Pages static site generation
   images: {
+    unoptimized: true, // Required for static export (no Next.js image server)
     remotePatterns: [
       {
         protocol: 'https',
@@ -9,7 +11,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'source.unsplash.com', // Sometimes used for random images
+        hostname: 'source.unsplash.com',
       }
     ],
   },

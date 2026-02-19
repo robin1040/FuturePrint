@@ -17,7 +17,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
     const [errorMessage, setErrorMessage] = useState('');
 
     // IMPORTANT: This ID must be replaced by the user
-    const FORMSPREE_ID = "xykdjrqa";
+    const FORMSPREE_ID: string = "xykdjrqa";
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
