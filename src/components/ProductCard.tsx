@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ShoppingCart } from 'lucide-react';
 import { Product } from '../data/productos';
 import { useCart } from '../context/CartContext';
+import { getAssetPath } from '../utils/site';
 
 interface ProductCardProps {
     product: Product;
@@ -36,7 +37,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 {/* Image Container */}
                 <div className="relative h-64 overflow-hidden border-b border-white/5 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
                     <img
-                        src={product.imagen}
+                        src={product.imagen.startsWith('http') ? product.imagen : getAssetPath(product.imagen)}
                         alt={product.nombre}
                         className="w-full h-full object-contain p-2 transform group-hover:scale-110 transition-transform duration-700 filter brightness-90 group-hover:brightness-110"
                     />

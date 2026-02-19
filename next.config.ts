@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
-  output: 'export',  // Required for GitHub Pages static site generation
+  output: 'export',
+  basePath: isProd ? '/FuturePrint' : '',
+  assetPrefix: isProd ? '/FuturePrint/' : '',
   images: {
-    unoptimized: true, // Required for static export (no Next.js image server)
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

@@ -4,6 +4,7 @@ import { useCart } from '../context/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, X, Trash2 } from 'lucide-react';
 import CheckoutModal from './CheckoutModal';
+import { getAssetPath } from '../utils/site';
 import { useState } from 'react';
 
 export default function SidebarCart() {
@@ -65,7 +66,11 @@ export default function SidebarCart() {
                                                 exit={{ opacity: 0 }}
                                                 className="flex gap-4 p-4 bg-black/30 rounded-lg border border-white/5 group hover:border-[var(--neon-cyan)] transition-colors"
                                             >
-                                                <img src={item.imagen} alt={item.nombre} className="w-16 h-16 object-cover rounded bg-white/5" />
+                                                <img
+                                                    src={item.imagen.startsWith('http') ? item.imagen : getAssetPath(item.imagen)}
+                                                    alt={item.nombre}
+                                                    className="w-16 h-16 object-cover rounded bg-white/5"
+                                                />
                                                 <div className="flex-1">
                                                     <h4 className="font-bold text-sm text-white mb-1">{item.nombre}</h4>
                                                     <p className="text-xs text-[var(--neon-cyan)] font-mono">${item.precio.toFixed(2)}</p>
