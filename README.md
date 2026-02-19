@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FuturePrinter 3D Store
 
 Proyecto Next.js 14+ con Tailwind CSS y Framer Motion.
@@ -51,3 +52,7 @@ Este proyecto está listo para Vercel.
 1. Sube el código a GitHub.
 2. Importa el repositorio en Vercel.
 3. El despliegue debería ser automático sin configuración extra.
+=======
+# FuturePrint
+Pagina Web de ventas de impresiones 3D
+>>>>>>> b0e01125cfc0e9ff4453f0673a3d80c52c821afe
